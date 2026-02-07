@@ -16,10 +16,59 @@
 
 <body>
 
-<!-- 🔹 YOUR ENTIRE BODY CONTENT (UNCHANGED) 🔹 -->
-<!-- Paste EXACT body content from your code here -->
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <h1>🧠 Skivis</h1>
+  <p>AI Skin & Eye Care Platform</p>
+</header>
 
-<!-- JS Files -->
+<!-- ================= QUICK ACTIONS ================= -->
+<section class="actions">
+  <button onclick="handleGridAction('Appointment')">📅 Appointment</button>
+  <button onclick="handleGridAction('Consultation')">💻 Consultation</button>
+  <button onclick="handleGridAction('Prescription')">📄 Upload Prescription</button>
+  <input type="file" id="file-input" hidden>
+</section>
+
+<!-- ================= AI CAMERA ================= -->
+<section class="card">
+  <h2>📸 Live AI Scan</h2>
+  <video id="webcam" autoplay playsinline></video>
+  <div id="label-container"></div>
+  <button onclick="startCamera()">Start Live Scan</button>
+</section>
+
+<!-- ================= IMAGE ANALYSIS ================= -->
+<section class="card">
+  <h2>🖼️ Image Analysis</h2>
+  <input type="file" id="image-upload">
+  <textarea id="txt-area" placeholder="Describe your issue (redness, itching, blurry vision...)"></textarea>
+  <button onclick="runAnalysis()">Analyze</button>
+
+  <div id="analysis-result">
+    <h3>Result</h3>
+    <p id="res-content"></p>
+  </div>
+</section>
+
+<!-- ================= CHAT ASSISTANT ================= -->
+<button class="chat-toggle" onclick="toggleChat()">💬 Chat</button>
+
+<div id="chat-box">
+  <div id="chat-header">Skivis Assistant</div>
+  <div id="chat-body"></div>
+  <div id="chat-footer">
+    <input id="chat-user-input" placeholder="Type your message..." />
+    <button onclick="sendChatMsg()">Send</button>
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <p>⚠️ This app provides AI-based suggestions only. Not a medical diagnosis.</p>
+</footer>
+
+<!-- ================= JS FILES ================= -->
 <script src="js/navigation.js"></script>
 <script src="js/analysis.js"></script>
 <script src="js/chat.js"></script>
